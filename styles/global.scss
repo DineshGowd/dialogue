@@ -1,0 +1,58 @@
+body {
+  margin: 0px;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .navbar {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .link {
+      text-decoration: none;
+      color: #000;
+      margin: 0 10px;
+    }
+    .link-btn {
+      font-size: 15px;
+      margin: 0 10px;
+      border: 2px solid white;
+      outline: 1px solid slateblue;
+      border-radius: 25px;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      padding:5px 20px;
+      align-self: center;
+      vertical-align:middle;
+      font-weight: 500;
+    }
+  }
+  .main-content {
+    flex: 1;
+    background-color: #daf5ff;
+  }
+  .footer {
+    background: rgba(255, 255, 255, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+  }
+}
+.home {
+  text-align: center;
+  font-size: 72px;
+  font-weight: 800;
+}
