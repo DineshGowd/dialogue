@@ -7,14 +7,17 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const NavBar = () => {
   const userLoggedIn = false;
-  const [providers, setProviders] = useState();
-  const [toggleDropdown,setToggleDropdown]=useState(false);
+  const [providers, setProviders] = useState(null);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
+  const { data: session } = useSession();
 
   useEffect(() => {
-    const setProviders = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
+      console.log("response", response);
       setProviders(response);
     };
+    setUpProviders();
   }, []);
 
   return (
@@ -26,7 +29,8 @@ const NavBar = () => {
       <Link className="link" href="/about">
         About
       </Link>
-      {userLoggedIn ? (
+      {/* {alert(providers)} */}
+      {session?.user ? (
         <>
           <Link className="link-btn" href="/signin">
             Create Post
@@ -36,6 +40,12 @@ const NavBar = () => {
           </Link>
           <Link href="/profile">
             <CgProfile size={25} />
+            <Image 
+            src={session.user.image}
+            height={50}
+            width={50}
+            alt="user-pic"
+            />
           </Link>
         </>
       ) : (
