@@ -32,7 +32,7 @@ const NavBar = () => {
       {/* {alert(providers)} */}
       {session?.user ? (
         <>
-          <Link className="link-btn" href="/signin">
+          <Link className="link-btn" href="/create-post">
             Create Post
           </Link>
           <Link className="link-btn" href="/signin">
